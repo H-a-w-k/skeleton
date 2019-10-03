@@ -14,12 +14,28 @@ export default {
         test: /\.js/,
         exclude: /(node_modules)/,
         use: [
-          {
-            loader: "babel-loader"
-          },
-          {
-            loader: "eslint-loader"
-          }
+          // Translates ES6 to ES5
+          "babel-loader"
+        ]
+      },
+      {
+        test: /\.js/,
+        exclude: /(node_modules)/,
+        use: [
+          // Checks JS syntax
+          "eslint-loader"
+        ]
+      },
+      {
+        test: /\.scss|css/,
+        exclude: /(node_modules)/,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader"
         ]
       }
     ]
