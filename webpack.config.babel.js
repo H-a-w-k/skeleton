@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 export default {
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist")
   },
   module: {
