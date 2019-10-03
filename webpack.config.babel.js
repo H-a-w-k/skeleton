@@ -3,6 +3,7 @@ import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
+  mode: "production",
   entry: "./src/index.js",
   output: {
     filename: "[name].[contenthash].js",
