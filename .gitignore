@@ -1,3 +1,6 @@
 
 # Dependency directories
 node_modules/
+
+# Bundled output directory
+dist/
