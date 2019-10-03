@@ -1,0 +1,5 @@
+{
+  // Ensures that lint understands ES6 syntax such as const
+  "parser": "babel-eslint",
+  "rules": {}
+}
