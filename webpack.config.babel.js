@@ -50,5 +50,14 @@ export default {
     //Display build info in colors
     colors: true
   },
+  // Webpack will host a local dev server on port 8080
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true, //Enables gzip compression. Used with webpack-dev-server --compress. See the result in the headers of the bundle request. Content-Encoding: gzip
+    port: 8080, //Port used
+    open: true, //Opens browser when web-pack-server is run
+    publicPath: "/", // base path for all the assets within your application.
+    historyApiFallback: true // redirect 404s to /index.html
+  },
   devtool: "source-map"
 };
