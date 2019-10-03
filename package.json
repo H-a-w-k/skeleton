@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/H-a-w-k/skeleton/issues"
   },
-  "homepage": "https://github.com/H-a-w-k/skeleton#readme"
+  "homepage": "https://github.com/H-a-w-k/skeleton#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.6.2"
+  }
 }
