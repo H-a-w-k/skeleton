@@ -9,11 +9,18 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 export default {
-  mode: "production",
+  mode: "development",
   entry: "./src/index.js",
   output: {
     filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist")
+  },
+  resolve: {
+    alias: {
+      //Required to make react hot loader work
+      //Avoids: react-🔥-dom patch is not detected. React 16.6+ features may not work. AppContainer @ react-hot-loader.development.js:2377
+      "react-dom": "@hot-loader/react-dom"
+    }
   },
   optimization: {
     splitChunks: {
@@ -79,6 +86,7 @@ export default {
   },
   // Webpack will host a local dev server on port 8080
   devServer: {
+    hot: true,
     contentBase: path.join(__dirname, "dist"),
     compress: true, //Enables gzip compression. Used with webpack-dev-server --compress. See the result in the headers of the bundle request. Content-Encoding: gzip
     port: 8080, //Port used
