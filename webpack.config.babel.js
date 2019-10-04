@@ -17,6 +17,7 @@ export default {
   },
   resolve: {
     alias: {
+      App: path.resolve(__dirname, "src/App/"),
       //Required to make react hot loader work
       //Avoids: react-🔥-dom patch is not detected. React 16.6+ features may not work. AppContainer @ react-hot-loader.development.js:2377
       "react-dom": "@hot-loader/react-dom"
