@@ -42,10 +42,13 @@ export default {
     ]
   },
   plugins: [
+    //Let's webpack bundle html files. Creates index.html in dist out of index.template.html.
     new HtmlWebpackPlugin({
       title: "App title",
       template: path.join(__dirname, "src/index.template.html")
-    })
+    }),
+    //Adds linting to style files like css and scss
+    new StyleLintPlugin({ context: path.join(__dirname, "src") })
   ],
   stats: {
     //Display build info in colors
