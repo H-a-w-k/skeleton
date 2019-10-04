@@ -1,12 +1,5 @@
-import "./index.scss";
+import React from "react";
+import ReactDom from "react-dom";
+import App from "./App";
 
-function component() {
-  const element = document.createElement("div");
-
-  element.innerHTML = "Hello world";
-  element.className = "main";
-
-  return element;
-}
-
-document.body.appendChild(component());
+ReactDom.render(<App />, document.getElementById("main-id"));

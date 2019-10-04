@@ -1,4 +1,4 @@
 {
   //This scope package is a Babel preset that compiles code down to ES5 by automatically determining the Babel plugins and polyfills needed based on the targeted browser or runtime environments. By default it behaves exactly the same as babel-preset-latest (or babel-preset-es2015, babel-preset-es2016, and babel-preset-es2017 together)³
-  "presets": ["@babel/preset-env"]
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
