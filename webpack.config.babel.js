@@ -12,7 +12,7 @@ export default {
   mode: "production",
   entry: "./src/index.js",
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist")
   },
   optimization: {
@@ -68,7 +68,7 @@ export default {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
-      filename: "[name].[contenthash].css",
+      filename: "[name].[hash].css",
       chunkFilename: "[id].css",
       ignoreOrder: false // Enable to remove warnings about conflicting order
     })
@@ -86,5 +86,8 @@ export default {
     publicPath: "/", // base path for all the assets within your application.
     historyApiFallback: true // redirect 404s to /index.html
   },
-  devtool: "source-map"
+  devtool: "source-map",
+  performance: {
+    hints: false //avoids warnings on bundle size
+  }
 };
