@@ -14,9 +14,11 @@
       "jsx": true
     }
   },
+  "globals": {},
   "env": {
-    "browser": true,
-    "jest": true
+    "browser": true, // enables globals like document and window
+    "jest": true, //enables jest globals
+    "node": true //enables globals like __dirname and modul
   },
   "rules": {
     "no-console": "error",

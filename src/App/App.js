@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.scss";
+import AppInput from "./AppInput";
 
 const App = () => {
-  const [text, setText] = useState("");
-
   return (
     <div className="main">
       <p>Hello my world from App</p>
-      <input
-        value={text}
-        onChange={event => setText(event.target.value)}
-      ></input>
+      <AppInput></AppInput>
     </div>
   );
 };

@@ -5,6 +5,6 @@ exports[`App snapshot 1`] = `
   <p>
     Hello my world from App
   </p>
-  <input value=\\"\\" onChange={[Function: onChange]} />
+  <AppInput />
 </div>"
 `;

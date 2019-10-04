@@ -13,20 +13,20 @@ export default {
   entry: "./src/index.js",
   output: {
     filename: "[name].[hash].js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
   },
   resolve: {
     alias: {
       App: path.resolve(__dirname, "src/App/"),
       //Required to make react hot loader work
       //Avoids: react-🔥-dom patch is not detected. React 16.6+ features may not work. AppContainer @ react-hot-loader.development.js:2377
-      "react-dom": "@hot-loader/react-dom"
-    }
+      "react-dom": "@hot-loader/react-dom",
+    },
   },
   optimization: {
     splitChunks: {
-      chunks: "all"
-    }
+      chunks: "all",
+    },
   },
   module: {
     rules: [
@@ -36,7 +36,7 @@ export default {
         use: [
           // Translates ES6 to ES5
           "babel-loader"
-        ]
+        ],
       },
       {
         test: /\.js/,
@@ -44,11 +44,10 @@ export default {
         use: [
           // Checks JS syntax
           "eslint-loader"
-        ]
+        ],
       },
       {
-        test: /\.scss|css/,
-        exclude: /(node_modules)/,
+        test: /\.(scss|css)$/,
         use: [
           // Creates `style` nodes from JS strings
           "style-loader",
@@ -58,9 +57,9 @@ export default {
           "css-loader",
           // Compiles Sass to CSS
           "sass-loader"
-        ]
+        ],
       }
-    ]
+    ],
   },
   plugins: [
     //Cleans the output folder before every build
@@ -68,35 +67,35 @@ export default {
     //Let's webpack bundle html files. Creates index.html in dist out of index.template.html.
     new HtmlWebpackPlugin({
       title: "App title",
-      template: path.join(__dirname, "src/index.template.html")
+      template: path.join(__dirname, "src/index.template.html"),
     }),
     //Adds linting to style files like css and scss
-    new StyleLintPlugin({ context: path.join(__dirname, "src") }),
+    new StyleLintPlugin({ context: path.join(__dirname, "src"), }),
     //Extracts css to own files.
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
       filename: "[name].[hash].css",
       chunkFilename: "[id].css",
-      ignoreOrder: false // Enable to remove warnings about conflicting order
+      ignoreOrder: false, // Enable to remove warnings about conflicting order
     })
   ],
   stats: {
     //Display build info in colors
-    colors: true
+    colors: true,
   },
   // Webpack will host a local dev server on port 8080
   devServer: {
-    hot: true,
+    hot: false,
     contentBase: path.join(__dirname, "dist"),
     compress: true, //Enables gzip compression. Used with webpack-dev-server --compress. See the result in the headers of the bundle request. Content-Encoding: gzip
     port: 8080, //Port used
     open: true, //Opens browser when web-pack-server is run
     publicPath: "/", // base path for all the assets within your application.
-    historyApiFallback: true // redirect 404s to /index.html
+    historyApiFallback: true, // redirect 404s to /index.html
   },
   devtool: "source-map",
   performance: {
-    hints: false //avoids warnings on bundle size
-  }
+    hints: false, //avoids warnings on bundle size
+  },
 };
