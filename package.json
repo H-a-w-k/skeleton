@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sb": "npm run storybook",
     "test": "jest",
     "tw": "jest --watchAll",
     "build": "webpack",
     "start": "webpack-dev-server",
     "start-h": "webpack-dev-server --hot",
-    "start-compressed": "webpack-dev-server --compressed"
+    "start-compressed": "webpack-dev-server --compressed",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,9 @@
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.6.2",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/react": "^5.2.1",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",

@@ -4,3 +4,6 @@ node_modules/
 
 # Bundled output directory
 dist/
+
+# Storybook
+storybook-static/
