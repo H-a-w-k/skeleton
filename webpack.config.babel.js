@@ -2,6 +2,8 @@ import path from "path";
 // The plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags.
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
+import StyleLintPlugin from "stylelint-webpack-plugin";
+
 export default {
   mode: "production",
   entry: "./src/index.js",
